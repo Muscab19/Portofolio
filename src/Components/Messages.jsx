@@ -11,7 +11,7 @@ const Messages = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get('http://localhost:1000/api/send/messages'); // Adjust URL if needed
+        const response = await axios.get('https://portifolio-backend-erb1.onrender.com/api/send/messages'); // Adjust URL if needed
         setMessages(response.data);
       } catch (err) {
         setError('Failed to load messages');
@@ -25,7 +25,7 @@ const Messages = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:1000/api/send/delete/messages/${id}`); // Adjust the delete URL
+      await axios.delete(`https://portifolio-backend-erb1.onrender.com/api/send/delete/messages/${id}`); // Adjust the delete URL
       setMessages(messages.filter(message => message._id !== id)); // Remove the deleted message from the state
     } catch (err) {
       setError('Failed to delete message');
